@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase - Industrial Machines Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add any specific styles for the Purchase page here */
+        .purchase-summary, .checkout-form {
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .purchase-summary h2, .checkout-form h2 {
+            margin-top: 0;
+        }
+
+        .purchase-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .purchase-summary table, .purchase-summary th, .purchase-summary td {
+            border: 1px solid #ddd;
+        }
+
+        .purchase-summary th, .purchase-summary td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .checkout-form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .checkout-form input, .checkout-form select, .checkout-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .checkout-form button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .checkout-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/WhatsApp_Image_2024-08-27_at_6.37.06_PM.jpeg" alt="Zensia Systems Logo" style="height: 60px; margin-right: 10px">
+        <h1>Industrial Machines Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="purchase.html">Purchase</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="checkout-form">
+        <h2>Checkout</h2>
+        <form action="process_order.php" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Shipping Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <label for="payment">Payment Method:</label>
+            <select id="payment" name="payment" required>
+                <option value="credit_card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank_transfer">Bank Transfer</option>
+            </select>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Industrial Machines Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Application</h1>
+    <div id="quiz"></div>
+    <button onclick="submitQuiz()">Submit</button>
+    <div id="score"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/quiz')
+                .then(response => response.json())
+                .then(data => displayQuiz(data));
+        });
+
+        function displayQuiz(data) {
+            const quizDiv = document.getElementById('quiz');
+            data.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `<p>${q.question}</p>`;
+                q.options.forEach(option => {
+                    const optionLabel = document.createElement('label');
+                    optionLabel.innerHTML = `<input type="radio" name="question${index}" value="${option}"> ${option}`;
+                    questionDiv.appendChild(optionLabel);
+                });
+                quizDiv.appendChild(questionDiv);
+            });
+        }
+
+        function submitQuiz() {
+            const questions = document.querySelectorAll('.question');
+            const answers = {};
+            questions.forEach((q, index) => {
+                const selectedOption = q.querySelector(`input[name="question${index}"]:checked`);
+                if (selectedOption) {
+                    answers[q.querySelector('p').textContent] = selectedOption.value;
+                }
+            });
+
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(answers)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('score').textContent = `Your score is: ${data.score}`;
+            });
+        }
+    </script>
+</body>
+</html>
