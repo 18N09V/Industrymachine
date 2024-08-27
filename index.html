@@ -3,70 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Application</title>
+    <title>Industrial Machines Shop</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
         }
-        .question {
-            margin-bottom: 20px;
+
+        header h1 {
+            margin: 0;
         }
-        .options label {
-            display: block;
+
+        header img {
+            height: 60px;
         }
     </style>
 </head>
 <body>
-    <h1>Quiz Application</h1>
-    <div id="quiz"></div>
-    <button onclick="submitQuiz()">Submit</button>
-    <div id="score"></div>
+    <header>
+        <img src="C:\Users\User\Downloads\WhatsApp Image 2024-08-27 at 6.37.06 PM.jpeg" alt="Zensia Systems Logo" style="height: 60px; margin-right: 10px">
+        <h1>Industrial Machines Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="purchase.html">Purchase</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <a href="index.html" class="shop-now-button"></a>
+        <button>Shop Now</button>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('/quiz')
-                .then(response => response.json())
-                .then(data => displayQuiz(data));
-        });
+    <section class="products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine1.jpeg" alt="Laser Machine"style="height: 300px; margin-right: 100px">
+                <h3>Laser Machine</h3>
+                <p>Price: $5000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine2.jpeg" alt="3D Printer"style="height: 300px; margin-right: 100px">
+                <h3>3D Printer</h3>
+                <p>Price: $3000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine3.jpeg" alt="CNC Machine"style="height: 300px; margin-right: 100px">
+                <h3>CNC Machine</h3>
+                <p>Price: $7000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine4.jpeg" alt="Industrial Robot"style="height: 300px; margin-right: 100px">
+                <h3>Industrial Robot</h3>
+                <p>Price: $15000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine5.jpeg" alt="Conveyor Belt System"style="height: 300px; margin-right: 100px">
+                <h3>Conveyor Belt System</h3>
+                <p>Price: $4000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine6.jpeg" alt="Packaging Machine"style="height: 300px; margin-right: 100px">
+                <h3>Packaging Machine</h3>
+                <p>Price: $8000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine7.png" alt="Hydraulic Press"style="height: 300px; margin-right: 100px">
+                <h3>Hydraulic Press</h3>
+                <p>Price: $12000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine8.jpg" alt="Milling Machine"style="height: 300px; margin-right: 100px">
+                <h3>Milling Machine</h3>
+                <p>Price: $9000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine9.jpeg" alt="Injection Molding Machine"style="height: 300px; margin-right: 100px">
+                <h3>Injection Molding Machine</h3>
+                <p>Price: $20000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine10.webp" alt="Extrusion Machine"style="height: 300px; margin-right: 100px">
+                <h3>Extrusion Machine</h3>
+                <p>Price: $18000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine11.jpeg" alt="Drilling Machine"style="height: 300px; margin-right: 100px">
+                <h3>Drilling Machine</h3>
+                <p>Price: $6000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine12.webp" alt="Lathe Machine"style="height: 300px; margin-right: 100px">
+                <h3>Lathe Machine</h3>
+                <p>Price: $8000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine13.webp" alt="Plasma Cutter"style="height: 300px; margin-right: 100px">
+                <h3>Plasma Cutter</h3>
+                <p>Price: $7000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine14.webp" alt="Water Jet Cutter"style="height: 300px; margin-right: 100px">
+                <h3>Water Jet Cutter</h3>
+                <p>Price: $25000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine15.jpg" alt="Metal Shear"style="height: 300px; margin-right: 100px">
+                <h3>Metal Shear</h3>
+                <p>Price: $10000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine16.jpg" alt="Grinder"style="height: 300px; margin-right: 100px">
+                <h3>Grinder</h3>
+                <p>Price: $5000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine17.webp" alt="Sandblasting Machine"style="height: 300px; margin-right: 100px">
+                <h3>Sandblasting Machine</h3>
+                <p>Price: $4500</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="C:\Users\User\Desktop\machine\machine18.jpg" alt="Wire EDM Machine"style="height: 300px; margin-right: 100px">
+                <h3>Wire EDM Machine</h3>
+                <p>Price: $22000</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
 
-        function displayQuiz(data) {
-            const quizDiv = document.getElementById('quiz');
-            data.forEach((q, index) => {
-                const questionDiv = document.createElement('div');
-                questionDiv.classList.add('question');
-                questionDiv.innerHTML = `<p>${q.question}</p>`;
-                q.options.forEach(option => {
-                    const optionLabel = document.createElement('label');
-                    optionLabel.innerHTML = `<input type="radio" name="question${index}" value="${option}"> ${option}`;
-                    questionDiv.appendChild(optionLabel);
-                });
-                quizDiv.appendChild(questionDiv);
-            });
-        }
+    <footer>
+        <p>&copy; 2024 Industrial Machines Shop. All rights reserved.</p>
+    </footer>
 
-        function submitQuiz() {
-            const questions = document.querySelectorAll('.question');
-            const answers = {};
-            questions.forEach((q, index) => {
-                const selectedOption = q.querySelector(`input[name="question${index}"]:checked`);
-                if (selectedOption) {
-                    answers[q.querySelector('p').textContent] = selectedOption.value;
-                }
-            });
-
-            fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(answers)
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('score').textContent = `Your score is: ${data.score}`;
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
